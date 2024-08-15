@@ -2,8 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import StyledInput from '../component/styled-input';
 import StyledButton from '../component/styled-button';
+import { router } from 'expo-router';
 
-export default function Home() {
+export default function Login() {
+    const handleLogin = () => {
+        router.replace('home')
+    }
   return (
     <View style={styles.container}>
       <Text>Hello World!</Text>
@@ -18,7 +22,7 @@ export default function Home() {
       <StyledButton 
       text='Login'
       color='green'
-      onClick={()=> console.log('batata')}
+      onClick={handleLogin}
       />
 
       <StatusBar style="auto" />
