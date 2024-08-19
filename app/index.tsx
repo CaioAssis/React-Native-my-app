@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import StyledInput from '../component/styled-input';
 import StyledButton from '../component/styled-button';
 import { router } from 'expo-router';
+import { Logo } from '../component/styled-image';
 
 export default function Login() {
     const handleLogin = () => {
@@ -10,6 +11,7 @@ export default function Login() {
     }
   return (
     <View style={styles.container}>
+      <Logo />
       <Text>Hello World!</Text>
       <StyledInput
       placeholder='Digite seu login'
