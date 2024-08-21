@@ -1,6 +1,6 @@
 import { Link } from 'expo-router';
 import { Text, View } from 'react-native';
-import Ex1Box from '../component/ex1-box';
+import Ex1Box from '../components/ex1-box';
 export default function Home() {
     return (
         <View style={{ flex: 1, justifyContent: 'space-between' }}>
