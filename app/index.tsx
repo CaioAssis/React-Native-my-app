@@ -29,7 +29,7 @@ export default function Login() {
 
       <StatusBar style="auto" />
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
