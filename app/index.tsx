@@ -1,9 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import StyledInput from '../components/styled-input';
 import StyledButton from '../components/styled-button';
 import { router } from 'expo-router';
 import { Logo } from '../components/styled-image';
+import {Button, ButtonText } from '@/components/ui/button'
+import { Text } from '@/components/ui/text';
 
 export default function Login() {
     const handleLogin = () => {
@@ -12,7 +14,7 @@ export default function Login() {
   return (
     <View style={styles.container}>
       <Logo />
-      <Text>Hello World!</Text>
+      <Text bold={true}>Hello World!</Text>
       <StyledInput
       placeholder='Digite seu login'
       onChangeText={(texto)=> console.log(texto)}
@@ -21,11 +23,9 @@ export default function Login() {
       placeholder='Digite sua senha'
       onChangeText={(texto)=> console.log(texto)}
       />
-      <StyledButton 
-      text='Login'
-      color='green'
-      onClick={handleLogin}
-      />
+      <Button size='md' variant='solid' onPress={handleLogin} className='bg-green-500 text bold'>
+        <ButtonText>Login</ButtonText>
+      </Button>
 
       <StatusBar style="auto" />
     </View>
