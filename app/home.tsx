@@ -1,12 +1,36 @@
-import { View, StyleSheet } from "react-native";
+import { useEffect, useState } from "react";
+import { View, StyleSheet, ScrollView } from "react-native";
 import {Text} from "react-native-paper"
+import { useAuth } from "../context/auth";
+
+interface IPost {
+    id: number
+    title: string
+    status: string
+}
 
 export default function Home() {
+    const auth = useAuth()
+    const [posts, setPosts] = useState<IPost[]>([])
+    useEffect(() => {
+        fetch('https://jsonplaceholder.org/posts')
+        .then(response => response.json())
+        .then(json => setPosts(json))
+    },[])
+//  <View style={styles.container}>
     return (
-        <View style={styles.container}>
+        <ScrollView >
 
-        <Text>Olá usuário!</Text>
-        </View>
+        <Text>Olá {auth.user.email}!</Text>
+        {
+            posts.map((post) => (
+                <Text>
+                    {post.id} - {post.title}
+                </Text>
+            ))
+        }
+
+        </ScrollView>
     )
 }
 
