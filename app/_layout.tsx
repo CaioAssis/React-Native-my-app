@@ -1,11 +1,13 @@
-import { Slot } from "expo-router";
-import { GluestackUIProvider } from "../components/ui/gluestack-ui-provider";
-//import "@/global.css";
+import { Slot } from "expo-router"
+import { PaperProvider } from "react-native-paper"
+import { AuthProvider } from "../context/auth"
 
 export default function Layout() {
-    return (
-        <GluestackUIProvider>
-            <Slot />
-        </GluestackUIProvider>
-    )
+  return (
+    <PaperProvider>
+      <AuthProvider>
+        <Slot />
+      </AuthProvider>
+    </PaperProvider>
+  )
 }
